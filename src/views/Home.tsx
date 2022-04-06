@@ -1,16 +1,20 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {colors, responsiveSize} from '../themes/themePrincipal';
 import LinearGradient from 'react-native-linear-gradient';
 import TimeLineCalendary from '../components/TimeLineCalendary';
 import ScheduleToday from '../components/ScheduleToday';
 import Reminder from '../components/Reminder';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-const Home = () => {
+interface Props extends NativeStackScreenProps<any, any>{}
+
+const Home = ({navigation}:Props) => {
   const {wp, hp, fz} = responsiveSize;
   return (
     <View style={{flex: 1, paddingVertical: hp(5)}}>
-      <View style={{marginHorizontal: wp(4)}}>
+      <ScrollView>
+          <View style={{marginHorizontal: wp(4)}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between',marginBottom:hp(4)}}>
           <View style={{flexDirection: 'column'}}>
             <Text
@@ -64,6 +68,17 @@ const Home = () => {
        <View style={{marginHorizontal:wp(4),marginTop:hp(3)}}>
            <Reminder />
        </View>
+
+       
+         <TouchableOpacity onPress={()=> navigation.navigate('TaskCalendary')} style={{justifyContent:'center',alignItems:'center',marginTop:hp(3)}}>
+          <LinearGradient style={{justifyContent:'center',alignItems:'center', width:wp(70),height:hp(9),borderRadius:wp(10)}} colors={['#DE496E','#FF6E91']}>
+            <Text style={{color:'white',fontWeight:'600',fontSize:fz(2.5)}}>Set schedule</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+       
+        
+      </ScrollView>
+    
     </View>
   );
 };

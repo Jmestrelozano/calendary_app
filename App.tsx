@@ -1,12 +1,13 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
+import Navigation from './src/navigation/Navigation'
 
 import Home from './src/views/Home'
 
 const App = () => {
   return (
     <View style={{flex:1}}>
-      <Home />
+      <Navigation />
     </View>
   )
 }

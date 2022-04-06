@@ -8,5 +8,6 @@ export const responsiveSize ={
 }
 
 export const colors ={
-    black: '#1E293B'
+    black: '#1E293B',
+    purple:'#8572FF'
 }

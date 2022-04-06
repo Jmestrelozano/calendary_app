@@ -89,7 +89,7 @@ const ScheduleToday = () => {
     <View style={{height: hp(40)}}>
       <Text style={{marginBottom: hp(1),fontWeight:'bold',color:colors.black,fontSize:fz(2)}}>ScheduleToday</Text>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView nestedScrollEnabled showsVerticalScrollIndicator={false}>
         <View>
           <RenderSchedule />
         </View>
