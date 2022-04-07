@@ -27,8 +27,7 @@ interface Props {
 }
 const CardDate = ({setIsActiveCard, isActiveCard}: Props) => {
   const {hp, wp, fz} = responsiveSize;
-  console.log(isActiveCard.day);
-
+  
   return (
     <View style={{marginTop: hp(1.5)}}>
       <FlatList

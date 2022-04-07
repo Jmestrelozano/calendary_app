@@ -13,8 +13,11 @@ import TimeZone from '../components/TimeZone';
 import Category from '../components/Category';
 import Note from '../components/Note';
 import LinearGradient from 'react-native-linear-gradient';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-const TaskCalendary = () => {
+interface TaskCalendaryProps extends NativeStackScreenProps<any, any>{}
+
+const TaskCalendary = ({navigation}:TaskCalendaryProps) => {
   const {hp, wp, fz} = responsiveSize;
   const [isActiveCard, setIsActiveCard] = useState({
     day: 0,
@@ -87,6 +90,7 @@ const TaskCalendary = () => {
 
           <View style={{marginHorizontal: wp(4), marginTop: hp(4)}}>
             <TouchableOpacity
+              onPress={()=>navigation.goBack()}
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
